@@ -1,0 +1,30 @@
+# This Dockerfile is used to build the token-rotator app in a linux environment and the entrypoint copies the built 
+# files back to ./dist so you can run it locally and test it with the Dockerfile (lambda execution platform).
+# 
+# The Dockerfile expects the root of the repo to be mounted to /localhost
+#
+# Example: 
+#
+# docker build -t token-rotator-build -f apps/token-rotator/Dockerfile.build . && \
+# docker run -it -v "$(pwd):/localhost" token-rotator-build
+FROM amazonlinux:2
+
+RUN mkdir -p /src
+RUN mkdir /localhost
+
+RUN yum install -y gcc-c++ make
+RUN curl --silent --location https://rpm.nodesource.com/setup_16.x | bash - && \
+    yum -y install nodejs
+
+# add app
+COPY . /src
+
+# install app dependencies
+WORKDIR /src
+RUN npm install
+RUN npm run build
+
+
+ENV NODE_ENV=production
+
+ENTRYPOINT [ "/src/apps/token-rotator/copy-local.sh" ]
