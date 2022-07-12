@@ -1,0 +1,59 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/token-rotator/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:webpack",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/token-rotator",
+        "main": "apps/token-rotator/src/main.ts",
+        "externalDependencies": "none",
+        "webpackConfig": "apps/token-rotator/custom-webpack.config.js",
+        "tsConfig": "apps/token-rotator/tsconfig.app.json",
+        "assets": ["apps/token-rotator/src/assets"]
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "apps/token-rotator/src/environments/environment.ts",
+              "with": "apps/token-rotator/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/node:node",
+      "options": {
+        "buildTarget": "token-rotator:build"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "token-rotator:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/token-rotator/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/token-rotator"],
+      "options": {
+        "jestConfig": "apps/token-rotator/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

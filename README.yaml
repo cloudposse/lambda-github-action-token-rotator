@@ -1,0 +1,98 @@
+---
+#
+# This is the canonical configuration for the `README.md`
+# Run `make readme` to rebuild the `README.md`
+#
+
+# Name of this project
+name: lambda-github-action-token-rotator
+
+# Logo for this project
+#logo: docs/logo.png
+
+# License of this project
+license: "APACHE2"
+
+# Copyrights
+copyrights:
+  - name: "Cloud Posse, LLC"
+    url: "https://cloudposse.com"
+    year: "2022"
+
+# Canonical GitHub repo
+github_repo: cloudposse/lambda-github-action-token-rotator
+
+# Badges to display
+badges:
+  - name: "Build Status"
+    image: "https://github.com/cloudposse/build-harness/workflows/docker/badge.svg?branch=master"
+    url: "https://github.com/cloudposse/build-harness/actions?query=workflow%3Adocker"
+  - name: "Latest Release"
+    image: "https://img.shields.io/github/release/cloudposse/build-harness.svg"
+    url: "https://github.com/cloudposse/build-harness/releases/latest"
+  - name: "Slack Community"
+    image: "https://slack.cloudposse.com/badge.svg"
+    url: "https://slack.cloudposse.com"
+  - name: "Discourse Forum"
+    image: "https://img.shields.io/discourse/https/ask.sweetops.com/posts.svg"
+    url: "https://ask.sweetops.com/"
+
+#related:
+#  - name: "Packages"
+#    description: "Cloud Posse installer and distribution of native apps"
+#    url: "https://github.com/cloudposse/packages"
+
+# References
+#references:
+#  - name: "Wikipedia - Test Harness"
+#    description: 'The `build-harness` is similar in concept to a "Test Harness"'
+#    url: "https://en.wikipedia.org/wiki/Test_harness"
+
+# Screenshots
+#screenshots:
+#  - name: "demo"
+#    description: "Example of using the `build-harness` to build a docker image"
+#    url: "https://cdn.rawgit.com/cloudposse/build-harness/master/docs/demo.svg"
+
+# Short description of this project
+description: |-
+  A lambda function runs as a GitHub Application and periodically gets a new GitHub Runner Registration Token from the
+  GitHub API. This token is then stored in AWS Systems Manager Parameter Store.
+
+# Introduction to the project
+#introduction: |-
+#  This is an introduction.
+
+# How to use this project
+usage: |-
+  This function should be deployed using the 
+  [terraform-aws-github-action-token-rotator](https://github.com/cloudposse/terraform-aws-github-action-token-rotator.git)
+  module.
+
+# Example usage
+#examples: |-
+#  Here are some real world examples:
+#  TODO: Add examples
+
+# How to get started quickly
+quickstart: |-
+  1. Browse to https://github.com/organizations/{YOUR_ORG}/settings/apps and click the New GitHub App button
+  1. Set the name to "GitHub Action Token Rotator"
+  1. Set the Homepage URL to `https://github.com/cloudposse/lambda-github-action-token-rotator`
+  1. Uncheck the Active checkbox under the Webhook heading
+  1. Select `Read and write` under Organization permissions -> Self-hosted runners
+  1. Click the Create GitHub App button at the bottom of the page
+
+  1. Under the `Client secrets` section, click the `Generate a new client secret` button
+  1. Copy the Client secret to a safe place, it will be needed to install the app
+
+  1. Under the `Private key` section, click the `Generate a private key` button
+  1. Download the private key to a safe place, it will be needed to install the app
+
+  1. Convert the private key to a PEM file using the following command:
+    `openssl pkcs8 -topk8 -inform PEM -outform PEM -nocrypt -in {DOWNLOADED_FILE_NAME}.pem -out private-key-pkcs8.key`
+
+# Contributors to this project
+contributors:
+  - name: "Matt Calhoun"
+    github: "mcalhoun"
