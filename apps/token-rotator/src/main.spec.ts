@@ -9,18 +9,15 @@ describe("lambdas", () => {
 
   beforeEach(() => {
     ssmClientMock.reset();
-    // ssmClientMock.on(PutParameterCommand).resolves({
-    //   $metadata: {
-    //     httpStatusCode: 200,
-    //   },
-    // });
-    ssmClientMock
-      .on(PutParameterCommand)
-      .rejects({ $metadata: { httpStatusCode: 500 } });
+    ssmClientMock.on(PutParameterCommand).resolves({
+      $metadata: {
+        httpStatusCode: 200,
+      },
+    });
   });
 
   describe("token-rotator", () => {
-    it("returns does not throw error", async () => {
+    it("completes without error", async () => {
       const result = await LambdaTester(handler).event({}).expectResult();
       expect(result).toBeUndefined();
     });
