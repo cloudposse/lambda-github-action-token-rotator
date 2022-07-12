@@ -1,0 +1,46 @@
+{
+  "name": "cloudposse",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "nx build",
+    "build:docker:local": "docker build -t token-rotator-build -f apps/token-rotator/Dockerfile.build . && docker run -it -v '$(pwd):/localhost' token-rotator-build",
+    "nx": "nx",
+    "start": "nx serve",
+    "test": "nx test"
+  },
+  "private": true,
+  "dependencies": {
+    "@aws-sdk/client-ssm": "^3.121.0",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.0.1",
+    "octokit": "^1.8.1",
+    "tslib": "^2.3.0",
+    "winston": "^3.8.1"
+  },
+  "devDependencies": {
+    "@nrwl/cli": "14.4.2",
+    "@nrwl/eslint-plugin-nx": "14.4.2",
+    "@nrwl/jest": "14.4.2",
+    "@nrwl/linter": "14.4.2",
+    "@nrwl/node": "14.4.2",
+    "@nrwl/workspace": "14.4.2",
+    "@types/aws-lambda": "^8.10.101",
+    "@types/jest": "27.4.1",
+    "@types/node": "*",
+    "@typescript-eslint/eslint-plugin": "^5.30.5",
+    "@typescript-eslint/parser": "^5.30.5",
+    "aws-sdk-client-mock": "^1.0.0",
+    "eslint": "^8.19.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-sort-destructure-keys": "^1.4.0",
+    "jest": "27.5.1",
+    "lambda-tester": "^4.0.1",
+    "nx": "^14.4.2",
+    "prettier": "^2.6.2",
+    "ts-jest": "27.1.4",
+    "ts-node": "~10.8.0",
+    "typescript": "~4.7.2"
+  }
+}
