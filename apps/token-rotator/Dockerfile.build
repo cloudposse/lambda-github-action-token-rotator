@@ -7,7 +7,7 @@
 #
 # docker build -t token-rotator-build -f apps/token-rotator/Dockerfile.build . && \
 # docker run -it -v "$(pwd):/localhost" token-rotator-build
-FROM amazonlinux:2
+FROM amazonlinux:2022
 
 RUN mkdir -p /src
 RUN mkdir /localhost
