@@ -18,6 +18,7 @@ env:
   IAM_ROLE_ARN_S3: arn:aws:iam::847349463865:role/cplive-core-ue2-public-lambda-artifacts-gha
   IAM_ROLE_SEESION_NAME: cloudposse/token-rotator/ci
   S3_BUCKET: cplive-core-ue2-public-lambda-artifacts
+  S3_FOLDER: lambda-github-action-token-rotator
 
 jobs:
   build-test-distribute:
@@ -106,4 +107,4 @@ jobs:
       - name: Copy Lambda to S3
         shell: bash
         run: |
-          aws s3 cp "./$FILE_NAME" s3://${{env.S3_BUCKET}}/bossy/ --sse AES256 --region ${{ env.AWS_REGION }}
+          aws s3 cp "./$FILE_NAME" s3://${{env.S3_BUCKET}}/${{env.S3_FOLDER}}/ --sse AES256 --region ${{ env.AWS_REGION }}
