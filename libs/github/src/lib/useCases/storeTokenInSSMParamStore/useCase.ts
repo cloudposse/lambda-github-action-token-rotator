@@ -45,6 +45,7 @@ export class StoreTokenInSSMParamStoreUseCase
           Name: path,
           Type: "SecureString",
           Value: token,
+          Overwrite: true,
         };
         const command = new PutParameterCommand(input);
         const apiResponse = await client.send(command);
