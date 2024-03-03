@@ -33,7 +33,7 @@
     "aws-sdk-client-mock": "1.0.0",
     "eslint": "8.57.0",
     "eslint-config-prettier": "8.10.0",
-    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-import": "2.29.1",
     "eslint-plugin-sort-destructure-keys": "1.5.0",
     "jest": "27.5.1",
     "lambda-tester": "4.0.1",
