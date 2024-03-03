@@ -98,7 +98,7 @@ jobs:
           mv "./$FILE_NAME" "$GITHUB_WORKSPACE/$FILE_NAME"
 
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v1
+        uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-region: us-east-2
           role-to-assume: ${{ env.IAM_ROLE_ARN_S3 }}
