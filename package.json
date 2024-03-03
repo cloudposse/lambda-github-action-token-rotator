@@ -13,7 +13,7 @@
   "dependencies": {
     "@aws-sdk/client-ssm": "3.128.0",
     "crypto": "1.0.1",
-    "dotenv": "16.0.1",
+    "dotenv": "16.4.5",
     "octokit": "1.8.1",
     "tslib": "2.4.0",
     "winston": "3.8.1"
