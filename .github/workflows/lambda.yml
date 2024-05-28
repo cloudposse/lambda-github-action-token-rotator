@@ -27,14 +27,8 @@ jobs:
       ##################################################
       # Setup GHA Dependencies
       ##################################################
-      - name: Use Node.js 16.x
+      - name: Setup Node LTS
         uses: actions/setup-node@v4
-        with:
-          node-version: 16.x
-
-      - name: Install Zip
-        run: |
-          sudo apt-get install -y zip
 
       ##################################################
       # Checkout the repository
