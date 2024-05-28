@@ -1,7 +1,9 @@
 {
+  "name": "github",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/github/src",
   "projectType": "library",
+  "tags": [],
   "targets": {
     "lint": {
       "executor": "@nrwl/linter:eslint",
@@ -12,12 +14,11 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/github"],
+      "outputs": ["{workspaceRoot}/coverage/libs/github"],
       "options": {
         "jestConfig": "libs/github/jest.config.ts",
         "passWithNoTests": true
       }
     }
-  },
-  "tags": []
+  }
 }

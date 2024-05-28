@@ -1,7 +1,9 @@
 {
+  "name": "token-rotator",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/token-rotator/src",
   "projectType": "application",
+  "tags": [],
   "targets": {
     "build": {
       "executor": "@nrwl/node:webpack",
@@ -48,12 +50,11 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/token-rotator"],
+      "outputs": ["{workspaceRoot}/coverage/apps/token-rotator"],
       "options": {
         "jestConfig": "apps/token-rotator/jest.config.ts",
         "passWithNoTests": true
       }
     }
-  },
-  "tags": []
+  }
 }

@@ -1,9 +1,5 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "npmScope": "cloudposse",
-  "affected": {
-    "defaultBase": "main"
-  },
   "implicitDependencies": {
     "package.json": {
       "dependencies": "*",
@@ -11,18 +7,21 @@
     },
     ".eslintrc.json": "*"
   },
-  "tasksRunnerOptions": {
-    "default": {
-      "runner": "nx/tasks-runners/default",
-      "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
-      }
-    }
-  },
   "targetDefaults": {
     "build": {
-      "dependsOn": ["^build"]
+      "dependsOn": ["^build"],
+      "cache": true
+    },
+    "lint": {
+      "cache": true
+    },
+    "test": {
+      "cache": true
+    },
+    "e2e": {
+      "cache": true
     }
   },
-  "defaultProject": "token-rotator"
+  "defaultProject": "token-rotator",
+  "defaultBase": "main"
 }
