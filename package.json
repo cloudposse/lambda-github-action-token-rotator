@@ -15,7 +15,7 @@
     "crypto": "1.0.1",
     "dotenv": "16.4.5",
     "octokit": "1.8.1",
-    "tslib": "2.4.0",
+    "tslib": "2.8.1",
     "winston": "3.11.0"
   },
   "devDependencies": {
