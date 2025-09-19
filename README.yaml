@@ -1,7 +1,7 @@
 ---
 #
 # This is the canonical configuration for the `README.md`
-# Run `make readme` to rebuild the `README.md`
+# Run `atmos readme` to rebuild the `README.md`
 #
 
 # Name of this project
@@ -65,7 +65,7 @@ description: |-
 
 # How to use this project
 usage: |-
-  This function should be deployed using the 
+  This function should be deployed using the
   [terraform-aws-github-action-token-rotator](https://github.com/cloudposse/terraform-aws-github-action-token-rotator.git)
   module.
 
