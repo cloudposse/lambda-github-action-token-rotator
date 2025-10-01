@@ -16,7 +16,7 @@
     "dotenv": "16.4.5",
     "octokit": "1.8.1",
     "tslib": "2.4.0",
-    "winston": "3.11.0"
+    "winston": "3.18.3"
   },
   "devDependencies": {
     "@nrwl/cli": "14.4.3",
