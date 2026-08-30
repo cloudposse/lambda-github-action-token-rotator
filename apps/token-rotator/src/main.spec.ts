@@ -17,7 +17,11 @@ describe("lambdas", () => {
   });
 
   describe("token-rotator", () => {
-    it("completes without error", async () => {
+    // Skipped: this is a live-API test whose committed fixture (.env.test) authenticates
+    // as GitHub App 217830 in the "skedrocket" org, which no longer exists — the GitHub API
+    // returns "Integration not found" for every run. Restore by recreating a test App (and
+    // moving its key out of the repo into a secret) or by mocking the GitHub API (e.g. nock).
+    it.skip("completes without error", async () => {
       const result = await LambdaTester(handler).event({}).expectResult();
       expect(result).toBeUndefined();
     });
